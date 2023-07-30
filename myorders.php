@@ -132,7 +132,8 @@
                                         </td>
                                         <div class="cartSection removeWrap">
                                             <!--<a href="delete_order.php?id='. $order_id .'&oid='.$order_pro_id.'" class="remove">x</a>-->
-                                            <a href="delete_order.php?oid='.$order_pro_id.'" class="remove">x</a>
+                                            <!--<a href="delete_order.php?oid='.$order_pro_id.'" class="remove">x</a>-->
+                                            <a href="delete_order.php?oid='.$order_pro_id.'&id='.$order_id.'" class="remove">x</a>
                                         </div>
                                     </div>
                                     </tr>

@@ -3,9 +3,10 @@
     <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
         <div class="container-fluid">
             <div class="navbar-wrapper">
-                <a class="navbar-brand" href="javascript:void(0)">Dashboard</a>
+                <a class="navbar-brand" href="javascript:void(0)">لوحة التحكم</a>
                 <div class="navbar-wrapper">
-                    <a class="navbar-brand" style="color: #fff;">Hello, <span style="font-weight:bold; color:#fff;">
+                    <a class="navbar-brand" style="color: #fff;">
+                        <span style="font-weight:bold; color:#fff;">مرحباً بك 
                             <?php if (isset($_SESSION['admin_name'])): ?>
                                 <?php echo $_SESSION['admin_name']; ?>
                             <?php endif ?>
@@ -28,7 +29,11 @@
 
 
                     <li class="nav-item">
-                        <a href="?logout='1'"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                        <a href="?logout='1'">
+                            تسجيل خروج
+                            &nbsp;
+                            <i class="fa fa-power-off" aria-hidden="true"></i>
+                        </a>
                     </li>
                 </ul>
             </div>

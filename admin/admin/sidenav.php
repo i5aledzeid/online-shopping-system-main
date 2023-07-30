@@ -38,6 +38,12 @@ if (isset($_GET['logout'])) {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 -->
 
+<style>
+    * {
+        direction: rtl;
+    }
+</style>
+
 </head>
 
 <body class="dark-edition">
