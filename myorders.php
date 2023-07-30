@@ -17,10 +17,11 @@
                 <ul class="cartWrap">
                 <?php
                 if (isset($_SESSION["uid"])) {
-                    $sql="SELECT c.order_id,a.product_id,a.product_title,a.product_price,a.product_image,b.qty,b.amt,c.total_amt FROM products a,order_products b,orders_info c WHERE a.product_id=b.product_id AND c.user_id='$_SESSION[uid]' AND b.order_id=c.order_id ORDER BY `c`.`order_id` DESC";
+                    $sql="SELECT c.order_id,a.product_id,a.product_title,a.product_price,a.product_image,b.qty,b.amt,c.total_amt,b.order_pro_id FROM products a,order_products b,orders_info c WHERE a.product_id=b.product_id AND c.user_id='$_SESSION[uid]' AND b.order_id=c.order_id ORDER BY `c`.`order_id` DESC";
                     $query = mysqli_query($con,$sql);
                     //display cart item in dropdown menu
                     
+                    $order_products = "SELECT order_pro_id FROM order_products";
                     
                     if (mysqli_num_rows($query) > 0) {
                         $prev_old = 0;
@@ -37,6 +38,8 @@
                             $amt=$row["amt"];
                             $total_amt=$row["total_amt"];
                             $order_id=$row["order_id"];
+
+                            $order_pro_id = $row['order_pro_id'];
 
                             $result = mysqli_query($con, "SELECT `order_id`, `user_id`, `f_name`, `email`, `address`, `city`, `state`, `zip`, `status`, `cardname`, `cardnumber`, `expdate`, `prod_count`, `total_amt`, `cvv` from orders_info  where order_id='$order_id'") or die("query 1 incorrect.......");
                             list($order_id, $product_type, $brand, $product_name, $price, $details, $state, $zip, $status, $cardname, $cardnumber, $expdate, $prod_count, $total_amt, $cvv) = mysqli_fetch_array($result);
@@ -78,7 +81,7 @@
                                         </div>
                                         </td>
                                         <div class="cartSection removeWrap">
-                                            <a href="#" class="remove">x</a>
+                                            <a href="delete_order.php?oid='.$order_pro_id.'&id='.$order_id.'" class="remove">x</a>
                                         </div>
                                     </div>
                                     </tr>
@@ -128,7 +131,8 @@
                                         </div>
                                         </td>
                                         <div class="cartSection removeWrap">
-                                            <a href="#" class="remove">x</a>
+                                            <!--<a href="delete_order.php?id='. $order_id .'&oid='.$order_pro_id.'" class="remove">x</a>-->
+                                            <a href="delete_order.php?oid='.$order_pro_id.'" class="remove">x</a>
                                         </div>
                                     </div>
                                     </tr>
