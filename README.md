@@ -3,7 +3,7 @@
 
 > ## Updated project with extra Features like WISHLIST, List Orders, add Reviews, updated routing, resolved search bug is available for Premium 
 
-> ### Any DBMS OR WEB TECHNOLOGIES (php, django, angular or react) or MachineLearning projects with installation support and code explaination for Premium contact phone: +966582350407 +919535688928 gmail: puneethreddy951@gmail.com or visit : http://www.notes4free.in/services.html
+> ### Any DBMS OR WEB TECHNOLOGIES (php, django, angular or react) or MachineLearning projects with installation support and code explaination for Premium contact phone: +966582350407 gmail: i5aledzeid@gmail.com or visit : http://www.notes4free.in/services.html
 
 # online-shopping-with-advanced-admin-page
 Updated version
