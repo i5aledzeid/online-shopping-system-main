@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin Login</title>
+    <title>تسجيل المالك</title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -15,7 +15,8 @@
 </head>
 <body>
 
-    <div class="main" style="padding-top: 90px;">
+    <!--<div class="main" style="padding-top: 90px;">-->
+    <div class="main" style="padding: 40px;">
 
         <!-- Sign up form -->
       
@@ -25,13 +26,12 @@
                 <div class="signin-content">
                     <div class="signin-image">
                         <figure><img src="./assets/images/signup-image.jpg" alt="sing up image"></figure>
-                        <a href="../index.php" class="signup-image-link">Back To Home</a>
-                        
-                        
+                        <a href="../index.php" class="signup-image-link">
+                            العودة للرئيسية</a>
                     </div>
 
                     <div class="signin-form">
-                        <h2 class="form-title">ADMIN LOGIN</h2>
+                        <h2 class="form-title">تسجيل المسؤول (المالك)</h2>
                         <form  class="register-form" id="login-form" action="login.php" method="post">
                             <div class="alert alert-danger"><h4 id="e_msg"><?php include('./server/errors.php'); ?></h4></div>
                             <div class="form-group">
@@ -44,7 +44,7 @@
                             </div>
                            
                             <div class="form-group form-button">
-                                <input type="submit" name="login_admin" id="signin" class="form-submit" value="Log in"/>
+                                <input type="submit" name="login_admin" id="signin" class="form-submit" value="تسجيل دخول"/>
                             </div>
                         </form>
                         

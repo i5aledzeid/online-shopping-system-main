@@ -15,14 +15,15 @@
 </head>
 <body>
 
-    <div class="main" style="padding-top: 90px;">
+    <!--<div class="main" style="padding-top: 90px;">-->
+    <div class="main" style="padding: 24px; height: 0;">
 
         <!-- Sign up form -->
         <section class="signup">
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
-                        <h2 class="form-title">Admin register Here</h2>
+                        <h2 class="form-title">إنشاء مسؤول جديد</h2>
                         <form method="post" class="register-form" id="register-form" action="login.php">
                              <div class="alert alert-danger"><h4 id="e_msg"><?php include('./server/errors.php'); ?></h4></div>
                             <div class="form-group">
@@ -49,7 +50,7 @@
                     </div>
                     <div class="signup-image">
                         <figure><img src="./assets/images/signup-image.jpg" alt="sing up image"></figure>
-                        <a href="#" class="signup-image-link">I am already member</a>
+                        <a href="login.php" class="signup-image-link">أنا بالفعل مسؤول</a>
                     </div>
                 </div>
             </div>

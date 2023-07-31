@@ -56,7 +56,7 @@ if (isset($_GET['logout'])) {
     -->
             <div class="logo">
                 <a href="index.php" class="simple-text logo-normal">
-                    <img src="./assets/img/capture.png" style="width: 150px;">
+                    <img src="./assets/img/capture-z.png" style="width: 150px;">
                 </a>
             </div>
             <div class="sidebar-wrapper">

@@ -24,6 +24,9 @@ include "topheader.php";
 
 $query = "SELECT * FROM orders_info";
 $run = mysqli_query($con, $query);
+
+$queryi = "SELECT * FROM products";
+$runi = mysqli_query($con, $queryi);
 ?>
 <style>
   tr {
@@ -58,8 +61,9 @@ $run = mysqli_query($con, $query);
               <table class="table table-hover tablesorter " id="">
                 <thead class=" text-primary">
                   <tr>
-                    <th>order_id</th>
+                    <th>الرقم<br>التسلسلي<br>للطلب</th>
                     <th>المنتجات</th>
+                    <th>الصورة</th>
                     <th>اتصال | البريد الإلكتروني</th>
                     <th>العنوان</th>
                     <th>القيمة</th>
@@ -74,8 +78,6 @@ $run = mysqli_query($con, $query);
                 <?php
                 
                 if (mysqli_num_rows($run) > 0) {
-
-
                   while ($row = mysqli_fetch_array($run)) {
                     $order_id = $row['order_id'];
                     $email = $row['email'];
@@ -87,9 +89,7 @@ $run = mysqli_query($con, $query);
 
                     ?>
                     <tr>
-                      <td>
-                        <?php echo $order_id ?>
-                      </td>
+                      <td><?php echo $order_id ?></td>
                       <td>
                         <?php
                         $query1 = "SELECT * FROM order_products where order_id = $order_id";
@@ -102,23 +102,18 @@ $run = mysqli_query($con, $query);
 
                           while ($row2 = mysqli_fetch_array($run2)) {
                             $product_title = $row2['product_title'];
+                            $product_image = $row2['product_image'];
                             ?>
+                            
                             <?php echo $product_title ?><br>
                           <?php }
                         } ?>
                       </td>
-                      <td>
-                        <?php echo $email ?>
-                      </td>
-                      <td>
-                        <?php echo $address ?>
-                      </td>
-                      <td>
-                        <?php echo $total_amount ?>
-                      </td>
-                      <td>
-                        <?php echo $qty ?>
-                      </td>
+                      <td><?php echo '<img style="width: 64px;" src="../../product_images/' . $product_image . '" alt="d">'?></td>
+                      <td><?php echo $email ?></td>
+                      <td><?php echo $address ?></td>
+                      <td><?php echo $total_amount ?></td>
+                      <td><?php echo $qty ?></td>
                       <td>
                         <div class="form-group">
                           <select id="product_type" name="product_type" disabled required class="form-control">

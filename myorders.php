@@ -2,7 +2,11 @@
     include "db.php";
     include "order_header.php";                    
 ?>
-
+<style>
+    section {
+        direction: ltr;
+    }
+</style>
 <link href="css/myorders.css" rel="stylesheet"/>					
 <section class="section main main-raised">       
 	<div class="container-fluid ">
@@ -44,17 +48,22 @@
                             $result = mysqli_query($con, "SELECT `order_id`, `user_id`, `f_name`, `email`, `address`, `city`, `state`, `zip`, `status`, `cardname`, `cardnumber`, `expdate`, `prod_count`, `total_amt`, `cvv` from orders_info  where order_id='$order_id'") or die("query 1 incorrect.......");
                             list($order_id, $product_type, $brand, $product_name, $price, $details, $state, $zip, $status, $cardname, $cardnumber, $expdate, $prod_count, $total_amt, $cvv) = mysqli_fetch_array($result);
                             $status_value = '';
+                            $color = '';
                             if ($status == 0) {
-                                $status_value = 'Confirm';
+                                $status_value = 'تم التأكيد';
+                                $color = '#82CA9C';
                             }
                             else if ($status == 1) {
-                                $status_value = 'Shipped';
+                                $status_value = 'تم الشحن';
+                                $color = '#F89C0E';
                             }
                             else if ($status == 2) {
-                                $status_value = 'Deleverd';
+                                $status_value = 'تم الإلغاء';
+                                $color = '#D22824';
                             }
                             else if ($status == 3) {
-                                $status_value = 'Cancel';
+                                $status_value = 'مكتمل';
+                                $color = '#6C78AF';
                             }
                             
                             if ($prev_old==0 || $prev_old==$order_id){
@@ -65,20 +74,17 @@
                                     <tr>
                                     <div class="infoWrap"> 
                                         <div class="cartSection">
-                                        <img src="product_images/'.$product_image.'" alt="'.$product_title.'" class="itemImg" />
-                                        <p class="itemNumber">#'.$product_id.'</p>
-                                        <h3>'.$product_title.'</h3>
-                                        
-                                        <p> '.$qty.' x &#x20B9; '.$product_price.'</p>
-                                        
-                                        <p class="stockStatus"> '.$status_value.' </p>
+                                            <img src="product_images/'.$product_image.'" alt="'.$product_title.'" class="itemImg" />
+                                            <p class="itemNumber">#'.$product_id.'</p>
+                                            <h3>'.$product_title.'</h3>
+                                            <p> '.$qty.' x &#x20B9; '.$product_price.'</p>
+                                            <p style=" color:'.$color.';" class="stockStatus"> '.$status_value.' </p>
                                         </div>  
-                                    
                                         <div class="prodTotal cartSection"><p>'.$qty.'</p></div>
                                         <td>
-                                        <div class="prodTotal cartSection">
-                                        <p>&dollar; '.$product_price.'</p>
-                                        </div>
+                                            <div class="prodTotal cartSection">
+                                                <p>&dollar; '.$product_price.'</p>
+                                            </div>
                                         </td>
                                         <div class="cartSection removeWrap">
                                             <a href="delete_order.php?oid='.$order_pro_id.'&id='.$order_id.'" class="remove">x</a>
@@ -94,17 +100,15 @@
                             </ul>
                         </div>  
                         <div class="special"><div class="specialContent">
-                                Thanks for Using our Platform
+                            شكراً لاستخدامك متجرنا
                         </div></div>
                         <div class="subtotal cf">
                             <ul>
-                            <li class="totalRow"><span class="label">Subtotal</span><span class="value">&#x20B9; '.$prev_total.'</span></li>
-                            
-                                <li class="totalRow"><span class="label">Shipping 1</span><span class="value">&#x20B9; 0.00</span></li>
-                            
-                                    <li class="totalRow"><span class="label">Tax</span><span class="value">&#x20B9; 0.00</span></li>
-                                    <li class="totalRow final"><span class="label">Total</span><span class="value">&#x20B9;'.$prev_total.'</span></li>
-                            
+                                <li class="totalRow"><span class="label">Subtotal</span><span class="value">&dollar; '.$prev_total.'</span></li>
+                                <li class="totalRow"><span class="label">رسوم التوصيل 1</span><span class="value">&dollar; 0.00</span></li>
+                                <li class="totalRow"><span class="label">الضريبة</span><span class="value">&dollar; 0.00</span></li>
+                                <li class="totalRow final"><span class="label">المجموع الإجمالي</span><span class="value">&dollar; '.$prev_total.'</span></li>
+                                <li class="totalRow final"><span class="label">ريال سعودي</span><span class="value"> '.$prev_total*3.75.'</span></li>
                             </ul>
                         </div>
             
@@ -143,19 +147,16 @@
                             }
                             if($i==$numRows+1){
                                 echo '
-                                 
                                     <div class="special"><div class="specialContent">
-                                            Thanks for Using our Platform
+                                        شكراً لاستخدامك متجرنا
                                     </div></div>
                                     <div class="subtotal cf">
                                         <ul>
-                                        <li class="totalRow"><span class="label">Subtotal</span><span class="value">&#x20B9; '.$prev_total.'</span></li>
-                                        
-                                            <li class="totalRow"><span class="label">Shipping 3</span><span class="value">&#x20B9; 0.00</span></li>
-                                        
-                                                <li class="totalRow"><span class="label">Tax</span><span class="value">&#x20B9; 0.00</span></li>
-                                                <li class="totalRow final"><span class="label">Total</span><span class="value">&#x20B9;'.$prev_total.'</span></li>
-                                        
+                                            <li class="totalRow"><span class="label">Subtotal</span><span class="value">&dollar; '.$prev_total.'</span></li>
+                                            <li class="totalRow"><span class="label">رسوم التوصيل</span><span class="value">&dollar; 0.00</span></li>
+                                            <li class="totalRow"><span class="label">الضريبة</span><span class="value">&dollar; 0.00</span></li>
+                                            <li class="totalRow final"><span class="label">المجموع الإجمالي</span><span class="value">&dollar; '.$prev_total.'</span></li>
+                                            <li class="totalRow final"><span class="label">ريال سعودي</span><span class="value"> '.$prev_total*3.75.'</span></li>
                                         </ul>
                                     </div>
                                 ';
