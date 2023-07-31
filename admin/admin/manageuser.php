@@ -25,16 +25,15 @@ include "topheader.php";
                 <div class="table-responsive ps">
                   <table class="table tablesorter table-hover" id="">
                     <thead class=" text-primary">
-                      <tr><th>User id</th>
-                        <th>First_name</th>
-                        <th>last_name</th>
-                        <th>Email</th>
-                       
-                <th>User Password</th>
-                <th>mobile</th>
-                <th>city</th>
-                <th>Address</th>
-	<th><a href="addsuppliers.php" class="btn btn-success">Add New</a></th>
+                      <tr><th>رقم المستخدم</th>
+                        <th>الإسم الأول</th>
+                        <th>الإسم الأخير</th>
+                        <th>البريد الإكتروني</th>
+                        <th>كلمة المرور</th>
+                        <th>رقم الهاتف</th>
+                        <th>المدينة</th>
+                        <th>العنوان</th>
+	                      <th><a href="addsuppliers.php" class="btn btn-success">إضافة مستخدم جديد</a></th>
                     </tr></thead>
                     <tbody>
                       <?php 
@@ -55,7 +54,7 @@ include "topheader.php";
                            <td>$address2</td>";
                         echo"<td>
                      
-                        <a class='btn btn-danger' href='manageuser.php?user_id=$user_id&action=delete'>Delete<div class='ripple-container'></div></a>
+                        <a class='btn btn-danger' href='manageuser.php?user_id=$user_id&action=delete'>حذف<div class='ripple-container'></div></a>
                         </td></tr>";
                         }
                         mysqli_close($con);

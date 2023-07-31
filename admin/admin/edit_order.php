@@ -18,6 +18,12 @@ include "sidenav.php";
 include "topheader.php";
 ?>
 
+<style>
+  label {
+    text-align: right;
+  }
+</style>
+
 <!-- End Navbar -->
 <div class="content">
   <div class="container-fluid">
@@ -38,7 +44,7 @@ include "topheader.php";
 
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>User Email / UID
+                    <label>إيميل المستخدم / UID
                       <?php echo '[' . $product_type . ']'; ?>
                     </label>
                     <input type="text" id="product_name" required name="product_name"
@@ -67,7 +73,7 @@ include "topheader.php";
                 <div class="row">
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label>Address</label>
+                      <label>العنوان</label>
                       <input type="text" id="price" name="price" value="<?php echo $price ?>" required
                         class="form-control">
                     </div>
@@ -75,7 +81,7 @@ include "topheader.php";
 
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label>City</label>
+                      <label>المدينة</label>
                       <input type="text" id="details" name="details" value="<?php echo $details ?>" required
                         class="form-control">
                     </div>
@@ -83,7 +89,7 @@ include "topheader.php";
 
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label>State</label>
+                      <label>الولاية</label>
                       <input type="text" id="state" name="state" value="<?php echo $state ?>" required
                         class="form-control">
                     </div>
@@ -91,7 +97,7 @@ include "topheader.php";
 
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label>Zip</label>
+                      <label>الرمز البريدي</label>
                       <input type="text" id="zip" name="zip" value="<?php echo $zip ?>" required class="form-control">
                     </div>
                   </div>
@@ -100,7 +106,7 @@ include "topheader.php";
 
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>Card Name</label>
+                    <label>الإسم الظاهر بالبطاقة</label>
                     <input type="text" id="cardname" required name="cardname" value="<?php echo $cardname; ?>"
                       class="form-control">
                   </div>
@@ -108,15 +114,15 @@ include "topheader.php";
 
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>Card Number</label>
-                    <input type="text" id="cardnumber" required name="cardnumber" value="<?php echo $cardnumber; ?>"
+                    <label>رقم البطاقة البنكية</label>
+                    <input style="direction: ltr; text-align: right;" type="text" id="cardnumber" required name="cardnumber" value="<?php echo $cardnumber; ?>"
                       class="form-control">
                   </div>
                 </div>
 
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>Expdate</label>
+                    <label>تاريخ إنتهاء صلاحية البطاقة</label>
                     <input type="text" id="expdate" required name="expdate" value="<?php echo $expdate; ?>"
                       class="form-control">
                   </div>
@@ -124,8 +130,10 @@ include "topheader.php";
 
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>CVV</label>
-                    <input type="text" id="cvv" required name="cvv" value="<?php echo $cvv; ?>" class="form-control">
+                    <label>قيمة التحقق من البطاقة
+                      (CVV)
+                    </label>
+                    <input style="direction: ltr; text-align: right;" type="text" id="cvv" required name="cvv" value="<?php echo $cvv; ?>" class="form-control">
                   </div>
                 </div>
 
@@ -146,7 +154,7 @@ include "topheader.php";
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label for="">Status</label>
+                    <label for="">الحالة</label>
                     <select id="status" name="status" required class="form-control">
                       <option value="" style="color:black;">select Status</option>
                       <?php
@@ -188,7 +196,7 @@ include "topheader.php";
 
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>Product Count</label>
+                    <label>عدد المنتجات</label>
                     <input type="text" id="prod_count" required name="prod_count" value="<?php echo $prod_count; ?>"
                       class="form-control">
                   </div>
@@ -196,7 +204,7 @@ include "topheader.php";
 
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>Total Amount</label>
+                    <label>المبلغ الإجمالي</label>
                     <input type="text" id="total_amt" required name="total_amt" value="<?php echo $total_amt; ?>"
                       class="form-control">
                   </div>
@@ -252,8 +260,7 @@ include "topheader.php";
 
             </div>
             <div class="card-footer">
-              <button type="submit" id="btn_save" name="btn_save" required class="btn btn-fill btn-primary">Update
-                Product</button>
+              <button type="submit" id="btn_save" name="btn_save" required class="btn btn-fill btn-primary">تحديث الطلب</button>
             </div>
           </div>
         </div>

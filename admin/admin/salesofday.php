@@ -25,7 +25,17 @@ include "topheader.php";
 $query = "SELECT * FROM orders_info";
 $run = mysqli_query($con, $query);
 ?>
-
+<style>
+  tr {
+    text-align: center;
+  }
+  td {
+    text-align: center;
+  }
+  option {
+    text-align: right;
+  }
+</style>
 <!-- End Navbar -->
 <div class="content">
   <div class="container-fluid">
@@ -33,7 +43,10 @@ $run = mysqli_query($con, $query);
     <div class="col-md-14">
       <div class="card ">
         <div class="card-header card-header-primary">
-          <h4 class="card-title" style="text-align: right;">الرئيسية / المبيعات
+          <h4 class="card-title" style="text-align: right;">
+            <a href="index.php" style="font-weight: bold; color: #EE4C16;">
+            <i class="fa fa-home" aria-hidden="true"></i>
+            الرئيسية</a> / <a href="">المبيعات</a>
             <?php echo $page; ?>
           </h4>
         </div>

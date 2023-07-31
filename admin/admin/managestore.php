@@ -24,15 +24,15 @@ include "topheader.php";
             <table class="table tablesorter table-hover" id="">
               <thead class=" text-primary">
                 <tr>
-                  <th>SID</th>
-                  <th>Title</th>
-                  <th>Subtitle</th>
+                  <th>#</th>
+                  <th>العنوان</th>
+                  <th>الوصف</th>
                   <th>UID</th>
-                  <th>Address</th>
-                  <th>Email</th>
-                  <th>Status</th>
-                  <th>Created At</th>
-                  <th><a href="add_stores.php" class="btn btn-success">Add New</a></th>
+                  <th>العنوان</th>
+                  <th>البريد</th>
+                  <th>الحالة</th>
+                  <th>إنشئ في تاريخ</th>
+                  <th><a href="add_stores.php" class="btn btn-success">إضافة سوق جديد</a></th>
                 </tr>
               </thead>
               <tbody>
@@ -54,7 +54,7 @@ include "topheader.php";
                     }
                   echo" <td>$user_password</td>";
                   echo "<td>
-                    <a class='btn btn-danger' href='managestore.php?user_id=$user_id&action=delete'>Delete<div class='ripple-container'></div></a>
+                    <a class='btn btn-danger' href='managestore.php?user_id=$user_id&action=delete'>حذف<div class='ripple-container'></div></a>
                     </td></tr>";
                 }
                 mysqli_close($con);

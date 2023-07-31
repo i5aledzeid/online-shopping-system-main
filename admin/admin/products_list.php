@@ -47,14 +47,14 @@ include "topheader.php";
             <table class="table tablesorter " id="page1">
               <thead class=" text-primary">
                 <tr>
-                  <th>Image</th>
-                  <th>Name</th>
-                  <th>Price</th>
+                  <th>الصورة</th>
+                  <th>الإسم</th>
+                  <th>السعر</th>
                   <th>
                     <?php
                     if ($_SESSION['role'] != 'e') {
                       echo '
-                            <a class=" btn btn-primary" href="add_products.php">Add New</a>
+                            <a class=" btn btn-primary" href="add_products.php">إضافة منتج جديد</a>
                         ';
                     }
                     ?><!--<a class=" btn btn-primary" href="add_products.php">Add New</a>-->
@@ -83,8 +83,8 @@ include "topheader.php";
 
                   if ($_SESSION['role'] != 'e') {
                     echo "
-                        <a class=' btn btn-success' href='edit_product.php?product_id=$product_id'>Edit</a>
-                        <a class=' btn btn-danger' href='products_list.php?product_id=$product_id&action=delete'>Delete</a>
+                        <a class=' btn btn-success' href='edit_product.php?product_id=$product_id'>تعديل</a>
+                        <a class=' btn btn-danger' href='products_list.php?product_id=$product_id&action=delete'>حذف</a>
                         ";
 
                   }

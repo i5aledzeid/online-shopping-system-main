@@ -1,4 +1,9 @@
 
+  <style>
+    .content {
+      direction: ltr;
+    }
+  </style>
   <?php
  session_start();
 include("./includes/db.php");

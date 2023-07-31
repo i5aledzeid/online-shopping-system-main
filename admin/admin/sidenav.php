@@ -39,7 +39,7 @@ if (isset($_GET['logout'])) {
 -->
 
 <style>
-    * {
+    .dark-edition {
         direction: rtl;
     }
 </style>
